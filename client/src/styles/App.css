@@ -1,0 +1,202 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.Body {
+  height: 100vh;
+  display: flex;
+  background-color: #282c34;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.Body1 {
+    background-color: #282c34;
+    padding-left:180px;
+    color: white;
+    margin-top:-22px;
+    height:230vh;
+  }
+  .codeStruct{
+    margin:auto;
+    padding:auto;
+    height:270px;
+    width:750px;
+    font-size: 13px;
+    margin-right:250px;
+    font-style: bold;
+    color:#ffffffe0;
+    background-color: #454545;
+    border:2px solid rgb(253, 134, 118);
+    
+}
+.code{
+    color:rgb(244, 93, 93);
+}
+.codeStruct1{
+    margin:auto;
+    padding:auto;
+    height:390px;
+    width:750px;
+    margin-right:250px;
+    font-size: 13px;
+    color:#ffffffe0;
+    background-color: #454545;
+    border:2px solid rgb(253, 134, 118);
+    
+}
+.inputbox{
+    height:40px;
+    margin-top:20px;
+    width:290px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    border-bottom: 2px solid #61dafb;
+    transition: 0.3s ease-in-out;
+}
+.inputbox:focus{
+    height:40px;
+    width:290px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    border-bottom: 2px solid #64d87d;
+    transition: 0.3s ease-in-out;
+}
+.inputbox:hover{
+    height:40px;
+    width:290px;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    border-bottom: 2px solid #61aefb;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+
+.card{
+    height:400px;
+    width:300px;
+    padding:10px;
+    display:flex;
+    margin-left:0px;
+    flex-direction: column;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    transition: 0.3s ease-in-out;
+}
+
+.card:hover{
+    height:400px;
+    width:300px;
+    padding:10px;
+    display:flex;
+    flex-direction: column;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba(16, 241, 226, 0.567);
+    transition: 0.3s ease-in-out;
+}
+
+.button{
+    width:160px;
+    height:50px;
+    margin-top: 15px;
+    margin-left: 24%;
+    font-size:15px;
+    background-color: #61aefb;
+    border-radius: 10px;
+    color:white;
+    border:0px solid blue;
+    transition: 0.3s ease-in-out;
+    outline:none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.button:hover{
+    width:160px;
+    height:50px;
+    margin-top: 15px;
+    margin-left: 24%;
+    font-size:15px;
+    background-color: #61fbca;
+    border-radius: 10px;
+    color:black;
+    transition: 0.3s ease-in-out;
+    outline:none;
+}
+
+.sidebar{
+    height:100vh;
+    width:15vw;
+    float:left;
+    margin-left:-60px;
+    background-color: #282c34;
+    position:fixed;
+    padding-left:-180px;
+}
+.sidebarIcons{
+    list-style: none;
+    border:5px solid black;
+    padding:20px;
+    height:20px;
+    width:20px;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    color:white;
+    margin:30px;
+
+    transition: 0.3s ease-in-out;
+}
+.sidebarIcons:hover{
+    list-style: none;
+    height:20px;
+    width:20px;
+    border:5px solid rgb(245, 245, 245);
+    padding:20px;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    color:rgb(7, 191, 247);
+    
+    margin-top:30px;
+    transition: 0.3s ease-in-out;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
