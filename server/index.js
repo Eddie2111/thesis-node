@@ -1,30 +1,18 @@
 const express = require('express');
 const app = express();
 const session = require('express-session');
+const cors = require('cors');
+const cookieparser = require('cookie-parser');
 
-const port = 3000;
 
 // messages
 const listen = require('./data/messages');
 
 //configs
-const cookie = require('./data/config');
-const cors = require("cors");
+const {cookie} = require('./data/config');
+const {corsOptions} = require('./data/config');
 
-const corsOptionsContent = {
-    "origin": "*",
-    "methods": "GET,POST",
-    "preflightContinue": false,
-    "optionsSuccessStatus": 204,
-    "allowedHeaders":['Content-Type']
-};
-const corsOptionsAuth = {
-    "origin": "*",
-    "methods": "GET,POST",
-    "preflightContinue": false,
-    "optionsSuccessStatus": 204,
-    "allowedHeaders":['Authorization']
-};
+
 
 //environment
 app.set('view engine','ejs');
@@ -32,20 +20,25 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use( express.static( "public" ) );
 app.use(session(cookie));
-
+app.use(cors(corsOptions));
+app.use(cookieparser());
 require('dotenv').config();
 
 //database
 const mongo = require('./model/mongoose');
 
+//route imports
 const index = require('./routes/index');
 const recieve = require('./routes/recieve');
 const bulk = require('./routes/bulk');
+const login = require('./routes/login');
 const showdata = require('./routes/showdata');
 
+//routes
 app.use('/',index);
-app.use('/recieve',cors(corsOptionsContent),recieve);
+app.use('/recieve',recieve);
 app.use('/bulk',bulk);
+app.use('/login',login);
 app.use('/showdata',showdata);
 
 // error handling
@@ -64,4 +57,7 @@ app.use(function(err, req, res, next) {
   res.send(errorRoute);
 });
 
-app.listen(process.env.PORT,listen);
+//server start
+app.listen(process.env.PORT,()=>{
+    console.log("port→",process.env.PORT);
+});

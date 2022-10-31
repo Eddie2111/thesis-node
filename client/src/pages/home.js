@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
+import backend from "./api/backend";
 import Sidebar from "./components/sidebar";
 
 
@@ -9,7 +10,7 @@ const Home = () => {
     const formHandle = async (e) => {
         e.preventDefault();
         if(e.target.sentence.value !== ""){
-            await axios.post("http://localhost:3200/recieve", 
+            await axios.post(backend+"recieve", 
             { sentence:e.target.sentence.value },
             )
             .then((res) => {

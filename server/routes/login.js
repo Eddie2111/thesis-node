@@ -17,9 +17,15 @@ router
         res.json(data);
     })
     .post((req,res)=>{
-        res.header("Access-Control-Allow-Origin", "*");
-        res.cookie('name', 'tobi', { domain: '.example.com', path: '/', secure: true, httpOnly: true });
-        res.json(req.body);
+        console.log(req.body);
+        if(req.body.email==="test@admin.com" && req.body.password==="abc123"){
+            res.header({"xsrf-token":"1234567890","Access-Control-Allow-Credentials":"true"});
+            //res.cookie('presence', 'user-email', { path: '/', secure: true, httpOnly: true, maxAge: 900000, sameSite: 'none' });
+            res.cookie('presence', 'user-name', { path: '/', secure: true, httpOnly: true, maxAge: 900000, sameSite: 'none' });
+            res.json({rest:req.body,data:data});
+        }else{
+            res.json({error:"invalid credentials"});
+        }
     }
     );
 
